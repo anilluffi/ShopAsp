@@ -1,0 +1,16 @@
+﻿
+@model ShopProjectMVC.Core.Models.Product;
+
+<form method="post" asp-action="Buy" class="card-form">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="card" onclick="this.closest('form').submit()">
+        <div class="card-image">
+            <img src="~/pictures/@Model.Image" alt="Picture" />
+        </div>
+        <div class="category"> @Model.Name </div>
+        <div class="heading">
+            @Model.Description
+            <div class="author"> By <span class="name">@Model.Price</span></div>
+        </div>
+    </div>
+    </form>

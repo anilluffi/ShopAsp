@@ -1,0 +1,97 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    background: white;
+    padding: .4em;
+    border-radius: 6px;
+    
+}
+
+.card-image {
+    background-color: rgb(236, 236, 236);
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    transition: .3s ease;
+}
+
+    .card-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; 
+        border-radius: inherit;
+    }
+
+    .card-image:hover {
+        transform: scale(0.98);
+    }
+
+.category {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: rgb(63, 121, 230);
+    padding: 10px 7px 0;
+}
+
+    .category:hover {
+        cursor: pointer;
+    }
+
+.heading {
+    font-weight: 600;
+    color: rgb(88, 87, 87);
+    padding: 7px;
+}
+
+    .heading:hover {
+        cursor: pointer;
+    }
+
+.author {
+    color: gray;
+    font-weight: 400;
+    font-size: 11px;
+    padding-top: 20px;
+}
+
+.name {
+    font-weight: 600;
+}
+
+    .name:hover {
+        cursor: pointer;
+    }

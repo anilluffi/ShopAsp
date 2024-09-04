@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ShopProjectMVC.Core.Models.Product>
+@inject IHttpContextAccessor accessor;
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="card-container">
+
+    @if (accessor.HttpContext.Session.GetInt32("role") == 1)
+    {
+        <a class="btn btn-success" asp-action="Create">Add product</a>
+        <br />
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Count</th>
+                    <th>Price</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Count</td>
+                        <td>@product.Price</td>
+                        <td>
+                            <div>
+                                <a asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        @foreach (var product in Model)
+        {
+            <partial name="ProductComponent" model="@product" />
+        }
+    }
+   
+</div>
+
+
+
+
